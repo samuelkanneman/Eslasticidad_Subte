@@ -8,10 +8,9 @@ Tablero interactivo desarrollado en **Streamlit** para visualizar y analizar los
 
 ---
 
-## 🎯 Versiones Disponibles
 
-### 📦 **Opción A: Carga Local** (Recomendada para uso frecuente)
-**Archivo:** `app_opcion_a_local.py`
+### 📦 **Carga Local** 
+**Archivo:** `app_elasticidad_local.py`
 
 ✅ **Ventajas:**
 - Carga automática al iniciar
@@ -30,28 +29,6 @@ streamlit run app_opcion_a_local.py
 
 ---
 
-### 🌐 **Opción B: Carga Interactiva** (Recomendada para demostración)
-**Archivo:** `app_opcion_b_interactiva.py`
-
-✅ **Ventajas:**
-- No necesitas colocar archivos manualmente
-- Interfaz amigable con drag & drop
-- Puedes cambiar de dataset fácilmente
-- Ideal para demostrar con diferentes archivos
-
-❌ **Desventajas:**
-- Debes subir el archivo cada vez que inicias la app
-
-**📝 Uso:**
-```bash
-# 1. Ejecuta:
-streamlit run app_opcion_b_interactiva.py
-
-# 2. Arrastra y suelta tu archivo parquet en la interfaz
-# 3. ¡Listo! Los modelos se entrenan automáticamente
-```
-
----
 
 ## 🎯 Características del Tablero
 
@@ -98,36 +75,6 @@ streamlit run app_opcion_b_interactiva.py
 
 ---
 
-## 🚀 Instalación y Uso
-
-### Prerrequisitos
-- Python 3.8 o superior
-- pip
-
-### Instalación
-
-1. **Instala las dependencias:**
-```bash
-pip install -r requirements.txt
-```
-
-2. **Elige tu versión:**
-
-**Opción A (Local):**
-```bash
-# Coloca subte_demanda_precio_mensual.parquet en este directorio
-streamlit run app_opcion_a_local.py
-```
-
-**Opción B (Interactiva):**
-```bash
-streamlit run app_opcion_b_interactiva.py
-# Luego sube tu archivo desde la interfaz
-```
-
-3. **Abre tu navegador en:** `http://localhost:8501`
-
----
 
 ## 📊 Modelos Implementados
 
@@ -187,55 +134,12 @@ La **elasticidad precio de la demanda** (β₁) mide el cambio porcentual en la 
 - **|ε| < 1:** Demanda inelástica (baja sensibilidad al precio)
 - **|ε| = 1:** Elasticidad unitaria
 
-### 💡 Ejemplo real:
-Si la elasticidad calculada es **-0.60** (demanda inelástica):
-- ↑ Precio +1% → ↓ Demanda -0.60%
-- ↑ Precio +10% → ↓ Demanda -6%
-- ↑ Precio +20% → ↓ Demanda -12%
 
 **🚇 Implicación para el subte:**
 Una demanda inelástica significa que la cantidad demandada es poco sensible a cambios en el precio, lo cual es típico del transporte público por ser un bien necesario con pocas alternativas cercanas.
 
 ---
 
-## 📝 Estructura del Proyecto
-
-```
-.
-├── app_opcion_a_local.py          # Versión con carga automática de archivo local
-├── app_opcion_b_interactiva.py    # Versión con upload interactivo
-├── requirements.txt                # Dependencias del proyecto
-├── README.md                       # Este archivo
-└── subte_demanda_precio_mensual.parquet  # Tu dataset (solo para Opción A)
-```
-
----
-
-## 🔧 Personalización
-
-### Ajustar el split Train/Test
-
-En ambas versiones, puedes modificar la proporción:
-
-```python
-# Por defecto: 60% train, 40% test
-resultados, pred_train, pred_test, split_idx, X_train, X_test, y_train, y_test = entrenar_modelos(X, y, split_ratio=0.6)
-
-# Cambiar a 70/30:
-resultados, ... = entrenar_modelos(X, y, split_ratio=0.7)
-```
-
-### Cambiar los valores de α para regularización
-
-```python
-modelos = {
-    'OLS (Baseline)': LinearRegression(),
-    'Ridge (α óptimo)': RidgeCV(alphas=[0.001, 0.01, 0.1, 1, 10, 100, 1000], cv=5),
-    'Lasso (α óptimo)': LassoCV(alphas=[0.001, 0.01, 0.1, 1, 10], cv=5, max_iter=10000)
-}
-```
-
----
 
 ## 📚 Tecnologías Utilizadas
 
@@ -289,11 +193,6 @@ Tu archivo `subte_demanda_precio_mensual.parquet` debe tener esta estructura:
 
 ## ❓ FAQ - Preguntas Frecuentes
 
-### ¿Qué versión debo usar?
-
-- **Opción A (Local):** Si vas a usar el tablero frecuentemente o para presentaciones en vivo
-- **Opción B (Interactiva):** Si quieres flexibilidad para cambiar de dataset o demostrar con diferentes archivos
-
 ### ¿Los modelos se entrenan cada vez que abro la app?
 
 Sí, pero solo la primera vez en cada sesión. Streamlit usa **caché** para que las siguientes interacciones sean instantáneas.
@@ -340,18 +239,6 @@ Este proyecto fue desarrollado como parte de un trabajo práctico para la materi
 Proyecto académico - Uso educativo
 
 ---
-
-## 📞 Soporte
-
-Si tienes problemas:
-
-1. Verifica que el archivo parquet esté en el directorio correcto (Opción A)
-2. Confirma que el archivo tenga las columnas requeridas
-3. Revisa que todas las dependencias estén instaladas: `pip install -r requirements.txt`
-4. Prueba con la otra versión si una no funciona
-
----
-
-**Desarrollado con ❤️ para Metodología de la Investigación**
+**Desarrollado para el Trabajo Final Metodología de la Investigación- Universidad del Gran Rosario**
 
 🚇 Análisis de Elasticidad Precio de la Demanda del Subte de Buenos Aires

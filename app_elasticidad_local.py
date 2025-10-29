@@ -1221,7 +1221,7 @@ st.markdown(f"""
 <div style='text-align: center; color: gray; padding: 1rem;'>
     <p><b>Trabajo Práctico - Metodología de la Investigación- Universidad del Gran Rosario</b></p>
     <p>Análisis de Elasticidad Precio de la Demanda del Subte</p>
-    <p>📊 Dataset: SBASE 2014-2019</p>4
+    <p>📊 Dataset: SBASE 2014-2019</p>
     <p>Desarrollado por:</p
     <p>Federico Ford</p>
     <p>Mariana Veccio </p>

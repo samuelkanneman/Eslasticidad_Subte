@@ -1221,11 +1221,12 @@ st.markdown(f"""
 <div style='text-align: center; color: gray; padding: 1rem;'>
     <p><b>Trabajo Práctico - Metodología de la Investigación- Universidad del Gran Rosario</b></p>
     <p>Análisis de Elasticidad Precio de la Demanda del Subte</p>
-    <p>📊 Dataset: SBASE 2014-2019 | {len(df_original)} observaciones</p>
-    <p>Desarrollado por Federico Ford</p>
-    <p>Desarrollado por Mariana Veccio </p>
-    <p>Desarrollado por Gastón Montenegro </p>
-    <p>Desarrollado por Pedro Chincolla </p>
-    <p>Desarrollado por Samuel Kanneman </p>
+    <p>📊 Dataset: SBASE 2014-2019</p>4
+    <p>Desarrollado por:</p
+    <p>Federico Ford</p>
+    <p>Mariana Veccio </p>
+    <p>Gastón Montenegro </p>
+    <p>Pedro Chincolla </p>
+    <p>Samuel Kanneman </p>
 </div>
 """, unsafe_allow_html=True)

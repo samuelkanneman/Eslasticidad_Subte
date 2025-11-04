@@ -102,7 +102,7 @@ Los tres modelos se entrenan **automáticamente** con tus datos:
 
 ## 📈 Variables del Modelo
 
-### Del tu dataset (requeridas):
+### Requeridas en el Dataset:
 - `fecha`: Fecha de la observación
 - `precio`: Precio del boleto del subte
 - `pax_pago`: Número de pasajeros pagos (demanda)

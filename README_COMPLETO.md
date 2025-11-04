@@ -4,8 +4,6 @@
 
 Tablero interactivo desarrollado en **Streamlit** para visualizar y analizar los resultados del modelo de regresión lineal que estima la **elasticidad precio de la demanda** del sistema de subterráneos de Buenos Aires.
 
-**✨ Novedad:** Ahora disponible en **DOS versiones** para trabajar con tus datos reales!
-
 ---
 
 

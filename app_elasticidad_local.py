@@ -263,8 +263,7 @@ if pagina == "🏠 Inicio":
         <b>Elasticidad Precio de la Demanda: {elasticidad_promedio:.4f}</b><br><br>
         
         ✓ La demanda es <b>{'INELÁSTICA' if abs(elasticidad_promedio) < 1 else 'ELÁSTICA'}</b><br>
-        ✓ Un aumento del <b>1%</b> en el precio genera una reducción del <b>{abs(elasticidad_promedio)*100:.2f}%</b> en la demanda<br>
-        ✓ Un aumento del <b>10%</b> en el precio genera una reducción del <b>{abs(elasticidad_promedio)*10:.2f}%</b> en la demanda
+        ✓ Un aumento del <b>1%</b> en el precio genera una reducción del <b>{abs(elasticidad_promedio):.2f}%</b> en la demanda<br>
         </div>
         """, unsafe_allow_html=True)
     
